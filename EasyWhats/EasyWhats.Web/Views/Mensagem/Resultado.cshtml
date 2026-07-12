@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Resultado";
+}
+
+<div class="alert alert-success">
+
+    <h4>Simulação realizada com sucesso!</h4>
+
+    <p>Total de números: <strong>@ViewBag.Total</strong></p>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Número</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var numero in (List<string>)ViewBag.Lista)
+        {
+            <tr>
+
+                <td>@numero</td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">
+    Voltar
+</a>

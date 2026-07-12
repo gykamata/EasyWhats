@@ -1,0 +1,67 @@
+﻿@model EasyWhats.Web.Models.ConfiguracaoSistema
+
+@{
+    ViewData["Title"] = "Configuração";
+}
+
+<div class="card">
+
+    <div class="card-header">
+        <h3>Configuração da API da Meta</h3>
+    </div>
+
+    <div class="card-body">
+
+        <form asp-action="Salvar" method="post">
+
+            <input asp-for="Id" type="hidden" />
+
+            <div class="mb-3">
+                <label asp-for="Empresa" class="form-label"></label>
+                <input asp-for="Empresa" class="form-control" />
+                <span asp-validation-for="Empresa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PhoneNumberId" class="form-label"></label>
+                <input asp-for="PhoneNumberId" class="form-control" />
+                <span asp-validation-for="PhoneNumberId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BusinessAccountId" class="form-label"></label>
+                <input asp-for="BusinessAccountId" class="form-control" />
+                <span asp-validation-for="BusinessAccountId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NumeroWhatsApp" class="form-label"></label>
+                <input asp-for="NumeroWhatsApp" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TemplatePadrao" class="form-label"></label>
+                <input asp-for="TemplatePadrao" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AccessToken" class="form-label"></label>
+                <textarea asp-for="AccessToken" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="AccessToken" class="text-danger"></span>
+            </div>
+
+            <button class="btn btn-success">
+                Salvar Configuração
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
